@@ -1,4 +1,9 @@
 require('dotenv').config();
+console.log('ENV CHECK:', {
+  botToken: !!process.env.SLACK_BOT_TOKEN,
+  appToken: !!process.env.SLACK_APP_TOKEN,
+  allowedUsers: !!process.env.ALLOWED_USER_IDS,
+});
 const { App } = require('@slack/bolt');
 
 const ALLOWED_USER_IDS = (process.env.ALLOWED_USER_IDS || '')
